@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <title>User Data</title>
+</head>
+
+<body>
+    <div class="happyTitle">
+    <h1>Happy New Year</h1>
+    </div>
+
+    <div class="userData">
+        <p><strong>Username:</strong> <span id="savedUsername"></span></p>
+        <p><strong>Email:</strong> <span id="savedEmail"></span></p>
+        <p><strong>Password:</strong> <span id="savedPassword"></span></p>
+    </div>
+
+    <script>
+        var savedUsername = localStorage.getItem("savedUsername");
+        var savedEmail = localStorage.getItem("savedEmail");
+        var savedPassword = localStorage.getItem("savedPassword");
+
+        var usernameElement = document.getElementById("savedUsername");
+        var emailElement = document.getElementById("savedEmail");
+        var passwordElement = document.getElementById("savedPassword");
+
+        if (savedUsername && savedEmail && savedPassword) {
+            usernameElement.textContent = savedUsername;
+            emailElement.textContent = savedEmail;
+            passwordElement.textContent = savedPassword;
+        } else {
+            document.write("<p>No data available.</p>");
+        }
+    </script>
+
+</body>
+</html>
+
